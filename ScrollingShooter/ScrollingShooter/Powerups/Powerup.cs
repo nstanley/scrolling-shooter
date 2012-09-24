@@ -10,8 +10,22 @@ namespace ScrollingShooter
     public enum PowerupType
     {
         None = 0,
-        Fireball = 0x1,
-        Freezewave = 0x32,
+        Fireball = 1,
+        Blades = 2,
+        EightBallShield = 4,
+        Frostball = 8,
+        Birdcrap = 16,
+        DroneWave = 32,
+        EnergyBlast = 64,
+        TriShield = 128,
+        Freezewave = 256,
+        Bomb = 512,
+        BubbleBeam = 1024,
+        Ale = 2048,
+        HomingMissiles = 4096,
+        ShotgunPowerup = 8192,
+        MeteorPowerup = 16384,
+        Railgun = 32768,
     }
 
     /// <summary>
@@ -78,7 +92,7 @@ namespace ScrollingShooter
         /// </param>
         public override void Draw(float elaspedTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteSheet, Bounds, spriteSource, Color.White, 0f, new Vector2(Bounds.Width / 2, Bounds.Height / 2), SpriteEffects.None, 1f);
+            spriteBatch.Draw(spriteSheet, Bounds, spriteSource, Color.White, 0f, new Vector2(Bounds.Width / 2, Bounds.Height / 2), SpriteEffects.None, LayerDepth);
         }
     }
 }

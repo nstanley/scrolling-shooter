@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ScrollingShooter
@@ -11,11 +11,36 @@ namespace ScrollingShooter
         // Player projectiles
         Bullet,
         Fireball,
-        ArrowProjectile,
+        ShotgunBullet,
+        BubbleBullet,
+        Bomb,
+        Frostball,
+        Blades,
+        TrishieldBall,
+        BirdCrap,
+        DroneWave,
+        EnergyBlast,
+        Meteor,
+        BigMeteor,
+        FreezewaveProjectile,
         // Enemy projectiles start with an index of 100;
         // this allows us to differentiate between projectiles
         // without needing a second base class
-
+        BlueBeam = 100,
+        EBullet = 101,
+        TurretFireball = 102,
+        EnemyBullet = 103,
+        ArrowProjectile = 104,
+        EnemyBomb = 105,
+        ToPlayerBullet = 106,
+        JetMinionBullet = 107,
+        EnemyFlameball = 108,
+        GenericEnemyBullet = 109,
+        DroneLaser = 110,
+        RGSabot = 111,
+        Photon = 112,
+        BlimpShotgun = 113,
+        BlimpBullet = 114,
     }
 
     /// <summary>
@@ -23,6 +48,8 @@ namespace ScrollingShooter
     /// </summary>
     public abstract class Projectile : GameObject
     {
+        public static int POWER_LEVEL = 1;
+
         /// <summary>
         /// The projectile's velocity
         /// </summary>
@@ -66,6 +93,7 @@ namespace ScrollingShooter
         {
             position += velocity * elapsedTime;
         }
+
 
         /// <summary>
         /// Draws the projectile on-screen
